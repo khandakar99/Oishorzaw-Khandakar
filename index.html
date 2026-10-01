@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Vision | Modern Digital Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/30">
+                        A
+                    </div>
+                    <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">ApexVision</span>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Home</a>
+                    <a href="#features" class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Features</a>
+                    <a href="#about" class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">About Us</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Contact</a>
+                </div>
+
+                <!-- Actions / Controls -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="themeToggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                        <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+                    </button>
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm shadow-md shadow-brand-500/20 transition-all hover:shadow-lg hover:shadow-brand-500/30">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="mobileThemeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                        <i id="mobileThemeIcon" class="fa-solid fa-moon"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-3 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+            <a href="#hero" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+            <a href="#features" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Features</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">About Us</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+            <a href="#contact" class="mobile-link block w-full text-center px-4 py-2.5 rounded-xl bg-brand-600 text-white font-medium text-sm">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Background Decorative Gradients -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-brand-500/20 to-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-semibold uppercase tracking-wider border border-brand-200 dark:border-brand-500/20 mb-6">
+                    <i class="fa-solid fa-sparkles text-xs"></i> Next Generation Platform
+                </span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                    Empowering Your Digital <span class="bg-gradient-to-r from-brand-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">Transformation</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 font-normal leading-relaxed mb-8">
+                    Build, scale, and innovate faster than ever before. We deliver seamless solutions designed to elevate your brand and drive exponential growth.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-base shadow-lg shadow-brand-500/25 transition-all hover:-translate-y-0.5">
+                        Start Free Trial <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                    <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-base border border-slate-200 dark:border-slate-700 transition-all">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dashboard / Mockup Preview -->
+            <div class="mt-16 relative max-w-5xl mx-auto">
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-800/80 p-2 sm:p-4">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Dashboard Preview" 
+                         onerror="this.src='https://placehold.co/1200x600/1e293b/ffffff?text=Dashboard+Preview'"
+                         class="rounded-xl w-full object-cover max-h-[500px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid Section -->
+    <section id="features" class="py-20 bg-slate-100/50 dark:bg-slate-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Everything You Need To Succeed</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg">Our suite of powerful tools is meticulously crafted to boost productivity and power modern workflows.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200/60 dark:border-slate-700/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lightning Fast</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Optimized for high performance and minimal latency. Experience instant speed and load times across all platforms.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200/60 dark:border-slate-700/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Bank-Grade Security</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Enterprise security standards integrated deeply into our systems to keep your sensitive data totally safe.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200/60 dark:border-slate-700/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Advanced Analytics</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Gain real-time actionable insights into your operational metrics with customizable data dashboards.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200/60 dark:border-slate-700/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Seamless Automation</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Eliminate repetitive workflows using built-in automation rules tailored specifically to your needs.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200/60 dark:border-slate-700/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Team Collaboration</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Enable instant feedback, multi-user editing, and organization-wide synchronization without friction.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200/60 dark:border-slate-700/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">24/7 Expert Support</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Our dedicated engineering team is available around the clock to assist you with any questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: Image Block -->
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+                             alt="Team Collaboration" 
+                             onerror="this.src='https://placehold.co/800x600/334155/ffffff?text=Our+Team'"
+                             class="w-full h-auto object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 hidden sm:block bg-brand-600 text-white p-6 rounded-2xl shadow-xl max-w-xs">
+                        <div class="text-3xl font-bold mb-1">99.9%</div>
+                        <div class="text-xs text-brand-100 font-medium uppercase tracking-wider">Service Uptime Guaranteed</div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Text Content -->
+                <div class="space-y-6">
+                    <span class="text-brand-600 dark:text-brand-400 font-semibold text-sm uppercase tracking-wider">Who We Are</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Driven by Innovation, Defined by Quality</h2>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Founded in 2021, ApexVision has grown into a leading technology modernizer. We empower companies globally to streamline processes, innovate digitally, and create impactful customer interactions.
+                    </p>
+
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="border-l-4 border-brand-600 pl-4">
+                            <div class="text-3xl font-extrabold">10k+</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Active Global Users</div>
+                        </div>
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <div class="text-3xl font-extrabold">150+</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Enterprise Partners</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-100/50 dark:bg-slate-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Let's Build Something Together</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg">Have questions or interested in working with us? Send us a message and we will respond promptly.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-white dark:bg-slate-800 p-8 sm:p-10 rounded-2xl shadow-xl border border-slate-200/60 dark:border-slate-700/50">
+                <!-- Interactive Toast Alert Container -->
+                <div id="toast" class="hidden mb-6 p-4 rounded-xl text-sm font-medium transition-all"></div>
+
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe" 
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@example.com" 
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                        <input type="text" id="subject" required placeholder="Project Inquiry" 
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea id="message" rows="4" required placeholder="Tell us about your project..." 
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" 
+                        class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-base shadow-lg shadow-brand-500/25 transition-all">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Footer Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-lg">
+                        A
+                    </div>
+                    <span class="font-bold text-lg tracking-tight">ApexVision</span>
+                </div>
+
+                <!-- Copyright -->
+                <p class="text-slate-500 dark:text-slate-400 text-sm">
+                    &copy; <span id="currentYear"></span> ApexVision. All rights reserved.
+                </p>
+
+                <!-- Social Links -->
+                <div class="flex space-x-4">
+                    <a href="#" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Client Scripts -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Dark / Light Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const mobileThemeToggleBtn = document.getElementById('mobileThemeToggle');
+        const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+
+        function toggleDarkMode() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            const iconClass = isDark ? 'fa-sun' : 'fa-moon';
+            themeIcon.className = `fa-solid ${iconClass} text-lg`;
+            mobileThemeIcon.className = `fa-solid ${iconClass}`;
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Load theme preferences
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.className = 'fa-solid fa-sun text-lg';
+            mobileThemeIcon.className = 'fa-solid fa-sun';
+        }
+
+        themeToggleBtn.addEventListener('click', toggleDarkMode);
+        mobileThemeToggleBtn.addEventListener('click', toggleDarkMode);
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        const toast = document.getElementById('toast');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Display success alert
+            toast.className = "mb-6 p-4 rounded-xl text-sm font-medium bg-emerald-500/10 text-emerald-600 border border-emerald-500/20";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your message has been sent successfully.`;
+            toast.classList.remove('hidden');
+
+            contactForm.reset();
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
